@@ -9,5 +9,10 @@ app.get('/health', (req, res) => {
     res.json({status: "OK"});
 });
 
+app.get('/:studentName', (req, res) => {
+    console.log(`Accessing resource /:studentname`);
+    res.json({message: `Hello, ${req.params.studentName}`, status: "OK"});
+});
+
 app.listen(PORT, HOST);
 console.log(`App is listening on port ${PORT}`);

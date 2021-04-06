@@ -15,5 +15,6 @@ spec:
       containers:
       - name: api
         image: timguardian/node-api
+        imagePullPolicy: Always
         ports:
         - containerPort: 8000
