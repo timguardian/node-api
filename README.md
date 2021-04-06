@@ -28,3 +28,38 @@ $ docker container run --name node-api-container -d -p 8000:8000 node-api
 ```json
 {"status": "OK"}
 ```
+
+# Usage
+
+> To apply yaml manifests follow the steps below:  
+> 1) Go to `/manifests` folder
+> 2) Run command:  
+
+```sh
+$ kubectl apply -f .
+```
+
+> [DEV ONLY] To test one of the pods of deployment on port 8000 use command below:
+
+```sh
+$ kubectl port-forward pod-name 8000:8000
+```
+
+Then you will be able to access the resource by going to `http://127.0.0.1:8000`  
+
+> To access via hostname add to `/etc/hosts` or `C:\Windows\System32\drivers\etc\hosts` set of rules:
+
+```sh
+127.0.0.1   sa.homework
+127.0.0.1   api.sa.homework
+```
+
+> To enable ingress run:
+```sh
+$ minikube addons enable ingress
+```
+
+> To deploy ingress-nginx (using Docker Desktop Windows):
+```sh
+$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.41.2/deploy/static/provider/cloud/deploy.yaml
+```

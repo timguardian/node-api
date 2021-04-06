@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-api
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: "*.sa.homework"
+    http:
+      paths:
+        - path: /health
+          backend:
+            serviceName: api-service
+            servicePort: 8000
