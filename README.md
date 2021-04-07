@@ -1,10 +1,10 @@
 # Environment
 
-OS: Windows 10 Home
-kubectl => Client/Server: 1.19.7
-docker engine => 20.10.5
-docker desktop => 3.2.2
-Kubernetes context: docker-desktop
+* OS: Windows 10 Home  
+* kubectl => Client/Server: 1.19.7
+* docker engine => 20.10.5
+* docker desktop => 3.2.2
+* Kubernetes context: docker-desktop
 
 # Installation
 
