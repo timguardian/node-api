@@ -1,32 +1,31 @@
-# Installation
+# Environment
 
-To pull from hub.docker.com and run the app, execute command in terminal:
-```sh
-$ docker container run --name node-api-container -d -p 8000:8000 timguardian/node-api:latest
-```
+OS: Windows 10 Home
+kubectl => Client/Server: 1.19.7
+docker engine => 20.10.5
+docker desktop => 3.2.2
+Kubernetes context: docker-desktop
+
+# Installation
 
 1) Clone app code:
 
 ```sh
-$ git clone `https://github.com/timguardian/node-api.git
+$ git clone `https://github.com/timguardian/node-api.git`
 ```
 
-2) Go to /path/to/project/node-api/ and build docker image:
+2) Go to the directory path-to-project/node-api/manifests/
+
+3) Execute command:
 
 ```sh
-$ docker image build -t node-api .
+$ kubectl apply -f .
 ```
 
-3) Run the container:
+> To pull from hub.docker.com and run the app, execute command in terminal:
 
 ```sh
-$ docker container run --name node-api-container -d -p 8000:8000 node-api
-```
-
-4) Go to the browser and open `localhost:8000\health` to check is app running. You should see JSON formatted message:
-
-```json
-{"status": "OK"}
+$ docker container run --name node-api-container -d -p 8000:8000 timguardian/node-api:latest
 ```
 
 # Usage
