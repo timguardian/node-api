@@ -11,7 +11,8 @@ app.get('/health', (req, res) => {
 
 app.get('/:studentName', (req, res) => {
     console.log(`Accessing resource /:studentname`);
-    res.json({message: `Hello, ${req.params.studentName}`, status: "OK"});
+    const studentName = req.params.studentName;
+    res.json({message: `Hello, ${studentName.charAt(0).toUpperCase() + studentName.substring(1)}`, status: "OK"});
 });
 
 app.listen(PORT, HOST);
